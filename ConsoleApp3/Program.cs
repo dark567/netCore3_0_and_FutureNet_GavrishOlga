@@ -19,8 +19,8 @@ namespace ConsoleApp3
         static int GetMiddleNameLenght(Person? person)
         {
             //recursive pattern
-            if (person is { }) return 1; // checking is null //recursive pattern
-            if (person is {FirstName:"Sheldon", LastName: var last}) return last.Length; //recursive pattern
+            if (person is { }) return 1; // checking is null //recursive patterns
+            if (person is {FirstName:"Sheldon", LastName: var last}) return last.Length; //recursive patterns
 
             var middle = person.MiddleName;
             //if (middle is null) return 0; //ver 1
