@@ -1,5 +1,8 @@
 ﻿using System;
-#nullable disable
+//enable varnings nullable
+//#nullable disable
+//enable varnings warnings nullable
+#nullable disable warnings
 
 namespace ConsoleApp3
 {
@@ -13,8 +16,12 @@ namespace ConsoleApp3
             Console.ReadLine();
         }
 
-        static int GetMiddleNameLenght(Person person)
+        static int GetMiddleNameLenght(Person? person)
         {
+            //recursive pattern
+            if (person is { }) return 1; // checking is null //recursive pattern
+            if (person is {FirstName:"Sheldon", LastName: var last}) return last.Length; //recursive pattern
+
             var middle = person.MiddleName;
             //if (middle is null) return 0; //ver 1
             if (string.IsNullOrEmpty(middle)) return 0; //ver 2
